@@ -14,10 +14,14 @@
             })
         },
         template: `
-        <main>
+        <main class="homeMain">
             <div class="selectedArea">
-                <h1>Welcome to EnviroPi</h1>
-                <h5> Because Mother Nature shouldnt be the only one to control the weather</h5>
+                <h3>Welcome to</h3>
+                <h1>EnviroPi</h1>
+                <h5>Because Mother Nature</h5>
+                <h5>shouldnt be the only one</h5>
+                <h5>to control the weather</h5>
+
                 <div class="locationButtons">
                     <button ui-sref="environment" class="topButton" type="button" name="button">Location 1</button>
                 </div>
