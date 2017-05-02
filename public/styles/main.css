@@ -1,0 +1,37 @@
+main, h1 , h5, h4{
+    display: flex;
+    justify-content: center;
+}
+
+.locationButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.selectedArea {
+    margin-top: 20px;
+    background-color: rgb(45, 165, 104);
+    width: 50%;
+    height: 600px;
+}
+
+.topButton {
+    margin-top: 180px;
+    margin-bottom: 20px;
+}
+
+.locationArea {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: rgb(245, 245, 245);
+    width: 50%;
+    height: 650px;
+    padding-bottom: 40px;
+}
+
+.liveImg {
+    display: flex;
+    justify-content: center;
+}
