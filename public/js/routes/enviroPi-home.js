@@ -6,11 +6,11 @@
             const vm = this
 
             vm.$onInit = function() {
+
             }
 
             $('.topButton').on('click', function (event){
                 //  $state.go('location')
-                console.log("You clicked me!");
             })
         },
         template: `
@@ -23,10 +23,10 @@
                 <h5>to control the weather</h5>
 
                 <div class="locationButtons">
-                    <button ui-sref="environment" class="topButton" type="button" name="button">Location 1</button>
+                    <button ui-sref="environment({location:1})" class="topButton" type="button" name="button">Location 1</button>
                 </div>
                 <div class="locationButtons">
-                    <button class="bottomButton" type="button" name="button">Location 2</button>
+                    <button ui-sref="environment({location:2})" class="bottomButton" type="button" name="button">Location 2</button>
                 </div>
             </div>
         </main>

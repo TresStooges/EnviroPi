@@ -3,6 +3,7 @@
 
   angular.module('app').config(config)
 
+  // TODO: figure out how to configure the app correctly
   config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
 
   function config($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -16,9 +17,9 @@
        component: 'landingPage',
      })
      .state({
-       name: 'environment',
-       url: '/environment/:location',
-       component: 'environment'
+       name: 'location',
+       url: '/environment',
+       component: 'location'
      })
     //  .state({
     //    name: 'showHouse',
