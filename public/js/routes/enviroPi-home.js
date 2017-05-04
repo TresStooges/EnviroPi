@@ -18,7 +18,7 @@
             </div>
 
             <div class = "tagline-wrapper">
-                <div>Because Mother Nature shouldnt be the only one to control the weather</div>
+                <div>Because Mother Nature shouldnt be the only one to control the weather.</div>
             </div>
             <div class = "location-list-wrapper">
                 <div ng-repeat="location in $ctrl.myLocations" class="location-button">

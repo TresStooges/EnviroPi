@@ -33,7 +33,7 @@
     
             <div class = "temperature-wrapper wrapper">
                 <div class = "temperature-label label"> Temperature</div>
-                <div class = "temperature">{{$ctrl.event.temperature}}&#176;f</div>
+                <div class = "temperature">{{$ctrl.event.temperature}}&#176;F</div>
             </div>
         </main>
 
