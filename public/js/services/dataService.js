@@ -48,7 +48,7 @@
             }
 
             this.getLatestTenByLocation = function(locationId){
-                return this.findAllByLocation(locationId).slice(-10).reverse()
+                return this.findAllByLocation(locationId).slice(-11, -1).reverse()
 
             }
 
