@@ -4,21 +4,42 @@
     angular.module('app')
     .service('dataService', service)
 
-    service.$inject = ['$http']
+    service.$inject = ['$http', "$rootScope", "$interval"]
 
-    function service ($http) {
+    function service ($http, $rootScope, $interval) {
         const vm = this
         this.location = []
-        $http.get('https://enviropi-backend.herokuapp.com/environment')
+        this.ready = $http.get('https://enviropi-backend.herokuapp.com/environment')
             .then(function(response){
                 response.data.forEach(element => {
                     vm.location.push(element)
+                    // $rootScope.$digest()
                 })
             })
-            .catch('Not working')
+            $interval(function(){
+                $http.get('https://enviropi-backend.herokuapp.com/environment')
+                    .then(function(response){
+                        response.data.forEach(element => {
+                            vm.location.push(element)
+                            // $rootScope.$digest()
+                        })
+                    })
+            },1000)
+            // .catch('Not working')
 
             this.findById = function (locations) {
                 return this.location.find(location => location.location == locations)
+            }
+
+            this.findLatestByLocation = function(locationId){
+                return this.location.filter(function(location){
+                    return location.location == locationId
+                })
+                .pop()
+            }
+
+            this.listOfLocation = function () {
+                return _.uniqBy(_.map(this.location, (v) => _.pick(v, ["location", "name"])), "location")
             }
 
     }

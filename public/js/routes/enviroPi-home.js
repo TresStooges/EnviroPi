@@ -2,16 +2,14 @@
     'use strict'
 
     angular.module('app').component('landingPage', {
-        controller: function() {
+        controller: function(dataService, $interval) {
             const vm = this
 
             vm.$onInit = function() {
-
+                dataService.ready.then(function(){
+                    vm.myLocations = dataService.listOfLocation()
+                })
             }
-
-            $('.topButton').on('click', function (event){
-                //  $state.go('location')
-            })
         },
         template: `
         <main class="homeMain">
@@ -22,12 +20,10 @@
                 <h5>shouldnt be the only one</h5>
                 <h5>to control the weather</h5>
 
-                <div class="locationButtons">
-                    <button ui-sref="environment({location:1})" class="topButton" type="button" name="button">Location 1</button>
+                <div ng-repeat="location in $ctrl.myLocations" class="locationButtons">
+                    <button ui-sref="environment({location:location.location})" class="topButton" type="button" name="button">{{location.name}}</button>
                 </div>
-                <div class="locationButtons">
-                    <button ui-sref="environment({location:2})" class="bottomButton" type="button" name="button">Location 2</button>
-                </div>
+
             </div>
         </main>
 
