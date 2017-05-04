@@ -19,6 +19,9 @@
             $interval(function(){
                 $http.get('https://enviropi-backend.herokuapp.com/environment')
                     .then(function(response){
+                        while(vm.location.length > 0) {
+                            vm.location.pop()
+                        }
                         response.data.forEach(element => {
                             vm.location.push(element)
                             // $rootScope.$digest()
@@ -31,11 +34,22 @@
                 return this.location.find(location => location.location == locations)
             }
 
-            this.findLatestByLocation = function(locationId){
+            this.findAllByLocation = function(locationId){
                 return this.location.filter(function(location){
                     return location.location == locationId
                 })
+                .sort(function(a,b){
+                    return a.timestamp > b.timestamp
+                })
+            }
+            this.findLatestByLocation = function(locationId){
+                return this.findAllByLocation(locationId)
                 .pop()
+            }
+
+            this.getLatestTenByLocation = function(locationId){
+                return this.findAllByLocation(locationId).slice(-10)
+
             }
 
             this.listOfLocation = function () {
@@ -44,7 +58,7 @@
 
 
 
-            
+
     }
 
 

@@ -8,12 +8,12 @@
             vm.$onInit = function() {
 
                 vm.event = dataService.findLatestByLocation($stateParams.location)
+                vm.event2 = dataService.getLatestTenByLocation($stateParams.location)
                 $interval(function(){
                     vm.event = dataService.findLatestByLocation($stateParams.location)
+                    vm.event2 = dataService.getLatestTenByLocation($stateParams.location)
                 },1000)
-                dataService.ready.then(function(){
-                    vm.allofOne = dataService.findById($stateParams.location)
-                })
+
 
             }
             // function location(){
@@ -34,10 +34,12 @@
 
             <div class="extraData">
             </div>
-            <div ng-repeat="allData in $ctrl.allofOne" class="locationButtons">
-                <img ui-sref="environment({location:allData.location})" class="thumbnail" src="{{allData.image}}">
-                <h6>May 5, 2017</h6>
-                <h6>9:43AM</h6>
+            <div class="container">
+            <div ng-repeat="allData in $ctrl.event2 track by allData.id" class="locationButtons">
+                <img ui-sref="environment({location:allData.location})" class="thumbnail" ng-src="{{allData.image}}">
+                <h6>{{allData.timestamp | amDateFormat:'MMMM Do YYYY'}}</h6>
+                <h6>{{allData.timestamp | amDateFormat:'h:mm a'}}</h6>
+            </div>
             </div>
         </main>
 

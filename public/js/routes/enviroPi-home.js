@@ -20,7 +20,7 @@
                 <h5>shouldnt be the only one</h5>
                 <h5>to control the weather</h5>
 
-                <div ng-repeat="location in $ctrl.myLocations" class="locationButtons">
+                <div ng-repeat="location in $ctrl.myLocations track by location.location" class="locationButtons">
                     <button ui-sref="environment({location:location.location})" class="topButton" type="button" name="button">{{location.name}}</button>
                 </div>
 
