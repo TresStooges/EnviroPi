@@ -1,8 +1,21 @@
+@import url("reset.css");
+
 $body-font-size: calc(16px + 2vw);
+$light-grey: lighten(grey, 25);
+
+// html{
+//   border: 10px solid black; 
+// }
+
 body{
   font-size: $body-font-size;
   line-height: 1.25;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $light-grey;
 }
+
 .label{
   font-size: calc(#{$body-font-size}*.8);
 }
@@ -10,22 +23,18 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+
 main{
-  background-color: grey;
+  background-color: $light-grey;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  margin-top: 20px;
 }
 
 .landing-page-main{
-  background-color: grey;
+  background-color: $light-grey;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,7 +77,7 @@ main{
   margin-top: calc(15px + 2vw);
   margin-bottom: calc(15px + 2vw);
   width: 50vw;
-  background-color: lighten(grey, 20);
+  background-color: $light-grey;
   box-shadow: 0px 0px 20px  0px black;
   text-align: center;
   display: flex;
@@ -76,6 +85,7 @@ main{
   justify-content: center;
   cursor: pointer;
   user-select: none;
+  border-radius: 25px;
 
   &:active{
     box-shadow: none;
@@ -90,7 +100,9 @@ main{
   width: 100%;
   min-height: 100px;
   font-size: calc(16px + 2vw);
-
+  border-radius: 25px;
+  color: $light-grey;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
