@@ -6,11 +6,15 @@
             const vm = this
             // vm.location = location()
             vm.$onInit = function() {
-                vm.event = dataService.findLatestByLocation($stateParams.location)
 
+                vm.event = dataService.findLatestByLocation($stateParams.location)
+                vm.event2 = dataService.getLatestTenByLocation($stateParams.location)
                 $interval(function(){
                     vm.event = dataService.findLatestByLocation($stateParams.location)
+                    vm.event2 = dataService.getLatestTenByLocation($stateParams.location)
                 },1000)
+
+
             }
             // function location(){
             //     return dataService.location
@@ -34,6 +38,16 @@
             <div class = "temperature-wrapper wrapper">
                 <div class = "temperature-label label"> Temperature</div>
                 <div class = "temperature">{{$ctrl.event.temperature}}&#176;F</div>
+            </div>
+
+            <div class="extraData">
+            </div>
+            <div class="container">
+            <div ng-repeat="allData in $ctrl.event2 track by allData.id" class="locationButtons">
+                <img ui-sref="environment({location:allData.location})" class="thumbnail" ng-src="{{allData.image}}">
+                <h6>{{allData.timestamp | amDateFormat:'MMMM Do YYYY'}}</h6>
+                <h6>{{allData.timestamp | amDateFormat:'h:mm a'}}</h6>
+            </div>
             </div>
         </main>
 

@@ -17,6 +17,7 @@
                 <h1>Welcome to EnviroPi</h1>
             </div>
 
+<<<<<<< HEAD
             <div class = "tagline-wrapper">
                 <div>Because Mother Nature shouldn't be the only one to control the weather.</div>
             </div>
@@ -27,6 +28,11 @@
                     </div>
                 </button>
             </div>
+=======
+                <div ng-repeat="location in $ctrl.myLocations track by location.location" class="locationButtons">
+                    <button ui-sref="environment({location:location.location})" class="topButton" type="button" name="button">{{location.name}}</button>
+                </div>
+>>>>>>> moreDays
 
             </div>
         </main>
