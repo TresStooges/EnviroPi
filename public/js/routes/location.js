@@ -7,19 +7,11 @@
             vm.location = location()
             console.log(vm.location);
             vm.$onInit = function() {
-                var ourShit = dataService.location
-                // const locationId = $stateParams.location
-                //  vm.location = dataService.findById(locationId)
+                
             }
-
             function location(){
-
                 return dataService.location
             }
-            // console.log(dataService.location);
-
-
-
         },
         template: `
         <main class="locationMain">
