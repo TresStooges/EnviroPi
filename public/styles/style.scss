@@ -197,6 +197,35 @@ main{
   /* box-shadow: 0 0  0 10px blue;*/
 }
 
+.thumbnail-text-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify: center;
+  margin-top: 20px;
+}
+.past-time-date-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.date-time-text{
+  font-size: calc(10px + 1vw);
+}
+.thumbnail{
+  width: 75px;
+  height: 75px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
 .date-time-wrapper{
   display: -webkit-box;
   display: -ms-flexbox;

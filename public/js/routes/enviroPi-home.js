@@ -21,16 +21,12 @@
                 <div>Because Mother Nature shouldn't be the only one to control the weather.</div>
             </div>
             <div class = "location-list-wrapper">
-                <div ng-repeat="location in $ctrl.myLocations" class="location-button">
+                <div ng-repeat="location in $ctrl.myLocations track by location.location" class="location-button">
                     <button class = "location-button-text-wrapper" ui-sref="environment({location:location.location})">
                         <div>{{location.name}}</div>
                     </div>
                 </button>
             </div>
-                <div ng-repeat="location in $ctrl.myLocations track by location.location" class="locationButtons">
-                    <button ui-sref="environment({location:location.location})" class="topButton" type="button" name="button">{{location.name}}</button>
-                </div>
-
             </div>
         </main>
 

@@ -43,10 +43,13 @@
             <div class="extraData">
             </div>
             <div class="container">
-            <div ng-repeat="allData in $ctrl.event2 track by allData.id" class="locationButtons">
+            <div ng-repeat="allData in $ctrl.event2 track by allData.id" class="thumbnail-text-container">
                 <img ui-sref="environment({location:allData.location})" class="thumbnail" ng-src="{{allData.image}}">
-                <h6>{{allData.timestamp | amDateFormat:'MMMM Do YYYY'}}</h6>
-                <h6>{{allData.timestamp | amDateFormat:'h:mm a'}}</h6>
+                <div class = "past-date-time-container">
+                <div class = "date-time-text">{{allData.timestamp | amDateFormat:'MMMM Do YYYY'}}</div>
+                <div class = "date-time-text">{{allData.timestamp | amDateFormat:'h:mm a'}}</div>
+                <div class = "date-time-text">{{allData.temperature}}</div>
+                </div>
             </div>
             </div>
         </main>
