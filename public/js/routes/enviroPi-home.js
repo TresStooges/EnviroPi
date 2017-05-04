@@ -12,17 +12,21 @@
             }
         },
         template: `
-        <main class="homeMain">
-            <div class="selectedArea">
-                <h3>Welcome to</h3>
-                <h1>EnviroPi</h1>
-                <h5>Because Mother Nature</h5>
-                <h5>shouldnt be the only one</h5>
-                <h5>to control the weather</h5>
+        <main class = "landing-page-main">
+            <div class="heading-wrapper landing-page-heading-wrapper">
+                <h1>Welcome to EnviroPi</h1>
+            </div>
 
-                <div ng-repeat="location in $ctrl.myLocations" class="locationButtons">
-                    <button ui-sref="environment({location:location.location})" class="topButton" type="button" name="button">{{location.name}}</button>
-                </div>
+            <div class = "tagline-wrapper">
+                <div>Because Mother Nature shouldnt be the only one to control the weather</div>
+            </div>
+            <div class = "location-list-wrapper">
+                <div ng-repeat="location in $ctrl.myLocations" class="location-button">
+                    <button class = "location-button-text-wrapper" ui-sref="environment({location:location.location})">
+                        <div>{{location.name}}</div>
+                    </div>
+                </button>
+            </div>
 
             </div>
         </main>

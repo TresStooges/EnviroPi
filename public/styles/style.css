@@ -1,0 +1,115 @@
+body {
+  font-size: calc(16px + 2vw);
+  line-height: 1.25; }
+
+.label {
+  font-size: calc(calc(16px + 2vw)*.8); }
+
+.wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+main {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; }
+
+.landing-page-main {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 90vh;
+  top: 0;
+  postion: absolute; }
+
+.heading-wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: calc(calc(16px + 2vw)*1.2);
+  text-align: center; }
+
+.tagline-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  text-align: center;
+  font-size: calc(16px + 2vw); }
+
+.location-list-wrapper {
+  margin-top: calc(10px + 5vw);
+  margin-bottom: calc(10px + 5vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90vw; }
+
+.location-button {
+  margin-right: calc(10px + 2vw);
+  margin-left: calc(10px + 2vw);
+  margin-top: calc(15px + 2vw);
+  margin-bottom: calc(15px + 2vw);
+  width: 50vw;
+  background-color: #b3b3b3;
+  box-shadow: 0px 0px 20px  0px black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none; }
+  .location-button:active {
+    box-shadow: none;
+    border: 1px inset black; }
+
+.location-button-text-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #660000;
+  cursor: pointer;
+  width: 100%;
+  min-height: 100px;
+  font-size: calc(16px + 2vw); }
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(to right, black, white, black); }
+
+.image-placeholder {
+  background-repeat: no-repeat;
+  width: 90vw;
+  height: 60vmin;
+  flex-grow: 1;
+  background-size: contain;
+  background-position: center top;
+  border-left: 5px solid black;
+  border-right: 5px solid black; }
+
+.date-time-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.temperature-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+/*# sourceMappingURL=style.css.map */

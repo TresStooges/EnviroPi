@@ -17,17 +17,26 @@
             // }
         },
         template: `
-        <main class="locationMain">
-            <div class="locationArea">
-                <h1>{{$ctrl.event.name}}</h1>
-                <img class="liveImg" src="{{$ctrl.event.image}}">
-                <h4>Date/Time taken</h4>
-                <h1>{{$ctrl.event.timestamp | amDateFormat:'MMMM Do YYYY'}}</h4>
-                <h1>{{$ctrl.event.timestamp | amDateFormat:'h:mm a'}}</h1>
-                <h4>Temperature</h4>
-                <h1>{{$ctrl.event.temperature}}&#176;f</h1>
+        <main>
+            <div class = "heading-wrapper wrapper">
+               <h1 class = "location-name">{{$ctrl.event.name}}</h1>
+            </div>
+            <div class = "image-wrapper wrapper">
+                <div class = "image-placeholder" style="background-image: url({{$ctrl.event.image}})"></div>
+             </div>
+    
+            <div class = "date-time-wrapper wrapper">
+               <div class = "date-time-label label">Last Updated:</div>
+               <div class = "date">{{$ctrl.event.timestamp | amDateFormat:'MMMM Do YYYY'}}</div>
+               <di class = "time">{{$ctrl.event.timestamp | amDateFormat:'h:mm a'}}</di>
+            </div>
+    
+            <div class = "temperature-wrapper wrapper">
+                <div class = "temperature-label label"> Temperature</div>
+                <div class = "temperature">{{$ctrl.event.temperature}}&#176;f</div>
             </div>
         </main>
+
 
       `
     })
